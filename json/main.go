@@ -1,8 +1,10 @@
 package main
 
 import (
-	"encoding/json"
+	// "encoding/json"
 	"fmt"
+
+	jsoniter "github.com/json-iterator/go"
 )
 
 type Message struct {
@@ -14,7 +16,7 @@ type Message struct {
 
 func main() {
 	msg := Message{Sender: "test", Recipient: "aa", Age: 0}
-	jsonStr, _ := json.Marshal(msg)
+	jsonStr, _ := jsoniter.Marshal(msg)
 	fmt.Printf("%s", jsonStr)
 
 	print()
@@ -55,7 +57,7 @@ func main() {
 	js["string"] = "string"
 	js["user"] = userJSON
 
-	bt, _ := json.Marshal(js)
+	bt, _ := jsoniter.Marshal(js)
 
 	fmt.Println(string(bt))
 
@@ -64,5 +66,5 @@ func main() {
 }
 
 func print() {
-	fmt.Printf("%s", "-------------- 华丽的分割线  ---------------------")
+	fmt.Println("---------------- 华丽的分割线  ---------------------")
 }
