@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"gotest/generate_id/orderNo/datetime"
+	"gotest/generateId/orderNo/datetime"
 )
 
 //生成单号

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gotest/generate_id/seqno/seqno"
+	"gotest/generateId/seqno/seqno"
 	"time"
 
 	"github.com/gomodule/redigo/redis"

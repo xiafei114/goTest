@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gotest/generate_id/orderNo/str"
+	"gotest/generateId/orderNo/str"
 )
 
 func main() {
