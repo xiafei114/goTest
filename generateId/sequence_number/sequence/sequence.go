@@ -2,7 +2,6 @@ package sequence
 
 import (
 	"fmt"
-	"sync"
 
 	"github.com/jinzhu/gorm"
 )
@@ -67,15 +66,11 @@ func (s *SeqNo) Next() (string, error) {
 
 // 返回
 func (s *SeqNo) next() (string, error) {
-	var mutex sync.Mutex
-	mutex.Lock()
 	seq := s.findCurrentSeqNumber()
 	nextSeq := seq.currentNum + seq.step
 	seq.currentNum = nextSeq
 
 	seq.save()
-
-	mutex.Unlock()
 
 	return seq.seqNumFormatted(), nil
 }
